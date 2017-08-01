@@ -1,0 +1,30 @@
+{
+  "id": 114916,
+  "url": "https://app.zonky.cz/loan/114916",
+  "name": "Dokončení rekonstrukce domu",
+  "story": "Jak to jistě každý majitel zná, tak i nás to postihlo. V průběhu rekonstrukce domu se nám objevily vícepráce a potřebujeme další finanční prostředky.\n\nDům jsme do teď rekonstruovali z vlastních prostředků. Přidali jsme patro, koupili okna, dveře, novou střechu, elektroinstalace, topení apod. Nyní nám chybí dodělat interiery, zateplení, schodiště a podlahy.\n\nRozhodli jsme se vyzkoušeli Zonky ačkoliv mám všechny banky nabídly víceméně stejné podmínky a tak doufáme, že nás nezklamou.\n\nJsem majitel a jednatel malé telekomunikační společnosti poskytující internet a kabelovou televizí téměř 2000 domácnostem. Přítelkyně pracuje v managerské pozici ve zdravotní pojišťovně.\n",
+  "purpose": "7",
+  "photos": [
+    {
+      "name": "shutterstock_309783218.08d6c2b3.jpg",
+      "url": "/loans/114916/photos/12573"
+    }
+  ],
+  "userId": 145205,
+  "nickName": "tomiczech",
+  "termInMonths": 84,
+  "interestRate": 0.0599,
+  "rating": "AAA",
+  "topped": null,
+  "amount": 400000,
+  "remainingInvestment": 393000,
+  "investmentRate": 0.0175,
+  "covered": false,
+  "datePublished": "2017-07-31T16:24:47.630+02:00",
+  "published": true,
+  "deadline": "2017-08-02T16:18:03.091+02:00",
+  "investmentsCount": 22,
+  "questionsCount": 0,
+  "region": "2",
+  "mainIncomeType": "ENTREPRENEUR"
+}

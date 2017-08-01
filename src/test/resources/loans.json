@@ -1,0 +1,62 @@
+[
+  {
+    "id": 115315,
+    "url": "https://app.zonky.cz/loan/115315",
+    "name": "Pujčka na opravu auta",
+    "story": "Dobrý den,\nrád bych si touhle cestou od Vás pujčil penize na opravu auta, které potřebuji, abych se mohl dostat do práce. Pujčil jsem si na rychlo od jiné nebankovní pujčky, protože jsem nemohl čekat na opravu auta a nevědel jsem že existuje zonky.cz, kde se nabizí férová úroční sazba. Ale uroční procenta té rychlopujčky jsou šílené, tak bych rád touhle cestou pujčku doplatil. A platil jen tuhle od zonky, kterou bych měl za par měsícu splacenou. děkuji moc. :)",
+    "purpose": "1",
+    "photos": [
+      {
+        "name": "shutterstock_401948656.6b9ca857.jpg",
+        "url": "/loans/115315/photos/12637"
+      }
+    ],
+    "userId": 145663,
+    "nickName": "zonky145663",
+    "termInMonths": 9,
+    "interestRate": 0.1999,
+    "rating": "D",
+    "topped": null,
+    "amount": 20000,
+    "remainingInvestment": 0,
+    "investmentRate": 1,
+    "covered": true,
+    "datePublished": "2017-08-01T22:25:18.844+02:00",
+    "published": true,
+    "deadline": "2017-08-03T22:12:36.877+02:00",
+    "investmentsCount": 35,
+    "questionsCount": 0,
+    "region": "2",
+    "mainIncomeType": "EMPLOYMENT"
+  },
+  {
+    "id": 115494,
+    "url": "https://app.zonky.cz/loan/115494",
+    "name": "Nové auto do firmy",
+    "story": "Jsem drobný živnostník a potřebuji kvalitní auto abych mohl spolehlivě plnit své závazky vůči zákazníkům kteří si mne objednali.\nPůjčka bude celá investována do nové dodávky.",
+    "purpose": "1",
+    "photos": [
+      {
+        "name": "shutterstock_401948656.6b9ca857.jpg",
+        "url": "/loans/115494/photos/12636"
+      }
+    ],
+    "userId": 145863,
+    "nickName": "zonky145863",
+    "termInMonths": 24,
+    "interestRate": 0.0599,
+    "rating": "AAA",
+    "topped": null,
+    "amount": 100000,
+    "remainingInvestment": 42400,
+    "investmentRate": 0.576,
+    "covered": false,
+    "datePublished": "2017-08-01T22:01:13.144+02:00",
+    "published": true,
+    "deadline": "2017-08-03T21:56:25.307+02:00",
+    "investmentsCount": 90,
+    "questionsCount": 0,
+    "region": "10",
+    "mainIncomeType": "SELF_EMPLOYMENT"
+  }
+]
