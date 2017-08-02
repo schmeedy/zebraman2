@@ -46,6 +46,22 @@ public class NewLoanCheckerTest {
         verify(newLoanReporter).newLoans(loans);
     }
 
+    @Test
+    public void shouldAskForNewLoansSinceTheLastOneItHasSeen() {
+        Loan lastLoan = new Loan(123, "test", "/loan/test", ZonedDateTime.now().minusMinutes(2));
+        List<Loan> loans = Lists.newArrayList(lastLoan, mock(Loan.class)); // loans in the response are sorted by -datePublished
+        setReturnedLoans(loans);
+
+        checker.checkNewLoans();
+        verify(newLoanReporter).newLoans(loans);
+
+        reset(apiClient, newLoanReporter);
+
+        setReturnedLoans(Lists.emptyList());
+        checker.checkNewLoans();
+        verify(apiClient).getNewLoansSince(eq(lastLoan.getDatePublished()), any(PageRequest.class));
+    }
+
     private void setReturnedLoans(List<Loan> loans) {
         when(apiClient.getNewLoansSince(any(ZonedDateTime.class), any(PageRequest.class))).thenAnswer((InvocationOnMock invocation) -> {
             PageRequest pageRequest = invocation.getArgumentAt(1, PageRequest.class);

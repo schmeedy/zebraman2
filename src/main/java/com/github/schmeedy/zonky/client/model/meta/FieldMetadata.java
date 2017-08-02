@@ -6,6 +6,7 @@ import com.github.schmeedy.zonky.client.filter.ResourceFilter;
 import com.github.schmeedy.zonky.client.order.FieldOrderSpec;
 import com.github.schmeedy.zonky.client.order.Order;
 import com.github.schmeedy.zonky.client.order.OrderSpec;
+import org.apache.commons.lang3.Validate;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -13,6 +14,7 @@ import java.time.ZonedDateTime;
 import java.util.Collections;
 
 import static com.github.schmeedy.zonky.client.filter.FilterOp.*;
+import static org.apache.commons.lang3.Validate.isTrue;
 import static org.apache.commons.lang3.Validate.notNull;
 
 /**
@@ -107,11 +109,13 @@ public class FieldMetadata<T> {
      * @param value filter value
      */
     private ResourceFilter fieldFilter(FilterOp op, T value) {
+        isTrue(filterable, "field " + fieldName + " is not filterable");
         FieldFilter fieldFilter = new FieldFilter(fieldName, op, toQueryStringRepr(value));
         return new ResourceFilter(Collections.singleton(fieldFilter));
     }
 
     private OrderSpec fieldOrderSpec(Order order) {
+        isTrue(filterable, "field " + sortable + " is not sortable");
         return new OrderSpec(Collections.singletonList(new FieldOrderSpec(this, order)));
     }
 

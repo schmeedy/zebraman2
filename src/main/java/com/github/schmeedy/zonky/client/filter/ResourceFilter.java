@@ -31,9 +31,9 @@ public class ResourceFilter {
      * Returns new {@link ResourceFilter} that is a combination of this filter and otherFilter
      */
     public ResourceFilter combine(ResourceFilter otherFilter) {
-        HashSet<FieldFilter> newFf = new HashSet<>(fieldFilters);
-        newFf.addAll(otherFilter.fieldFilters);
-        return new ResourceFilter(newFf);
+        HashSet<FieldFilter> newFfs = new HashSet<>(fieldFilters);
+        newFfs.addAll(otherFilter.fieldFilters);
+        return new ResourceFilter(newFfs);
     }
 
     /**
