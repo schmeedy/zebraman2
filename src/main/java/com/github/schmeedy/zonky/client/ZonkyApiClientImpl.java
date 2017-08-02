@@ -5,6 +5,8 @@ import com.github.schmeedy.zonky.client.model.Loan;
 import com.github.schmeedy.zonky.client.order.OrderSpec;
 import com.github.schmeedy.zonky.client.paging.Page;
 import com.github.schmeedy.zonky.client.paging.PageRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
@@ -27,6 +29,8 @@ import static org.springframework.http.HttpMethod.GET;
  */
 @Component
 public class ZonkyApiClientImpl implements ZonkyApiClient {
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     private URI apiBaseUri;
     private RestTemplate restTemplate;
@@ -70,11 +74,22 @@ public class ZonkyApiClientImpl implements ZonkyApiClient {
 
         HttpHeaders headers = order.applyTo(pageRequest.applyTo(new HttpHeaders()));
 
-        ResponseEntity<E[]> pageData = restTemplate.exchange(
-            getFullUri(resourcePath, filter),
-            GET,
-            new HttpEntity<>(headers),
-            resultType);
+        logger.debug("task=getRequestForPage status=start resource={}", resourcePath);
+        long startTime = System.currentTimeMillis();
+
+        ResponseEntity<E[]> pageData;
+        try {
+            pageData = restTemplate.exchange(
+                    getFullUri(resourcePath, filter),
+                    GET,
+                    new HttpEntity<>(headers),
+                    resultType);
+        } catch (RuntimeException e) {
+            logger.debug("task=getRequestForPage status=failure resource={} durationMs={}", resourcePath, System.currentTimeMillis() - startTime);
+            throw e;
+        }
+
+        logger.debug("task=getRequestForPage status=success resource={} durationMs={}", resourcePath, System.currentTimeMillis() - startTime);
 
         return new Page<>(Arrays.asList(pageData.getBody()), pageRequest);
     }
